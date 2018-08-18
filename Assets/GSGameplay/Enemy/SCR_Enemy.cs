@@ -62,11 +62,15 @@ public class SCR_Enemy : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerEnter2D(Collider2D other) {
+	private void OnTriggerEnter2D(Collider2D other) {
 		if (other.tag == "Path") {
 			SCR_Path scrPath = other.gameObject.GetComponent<SCR_Path>();
 			nextDirection = scrPath.moveDirection;
 			turnPosition = scrPath.transform.position;
 		}
+	}
+
+	public void Damage() {
+		
 	}
 }
